@@ -150,6 +150,8 @@ async fn main() -> anyhow::Result<()> {
 
     let app = Router::new()
         .route("/healthz", get(handler::health::health))
+        .route("/api", get(philand::docs::swagger_ui))
+        .route("/api/openapi.json", get(philand::docs::openapi_json))
         .merge(auth_routes)
         .merge(protected)
         .with_state(state)

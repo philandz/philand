@@ -187,8 +187,12 @@ export function ExportTableButton({
 
     const summaryContainer =
       clonedTableRoot.querySelector("[data-export-summary]") ||
-      clonedTableRoot.querySelector('[class*="CardHeader"] div div');
+      clonedTableRoot.querySelector('[class*="CardHeader"] div div[class*="flex gap-4"]') ||
+      clonedTableRoot.querySelector('[class*="CardHeader"] div div:last-child');
+    
+    console.log('Summary container found:', !!summaryContainer);
     if (summaryContainer) {
+      console.log('Summary HTML:', summaryContainer.innerHTML);
       const summarySlot = appHeader.querySelector(
         "#philand-export-summary-slot"
       ) as HTMLElement | null;
@@ -199,6 +203,36 @@ export function ExportTableButton({
           gap:16px;
         `;
         summarySlot.innerHTML = summaryContainer.innerHTML;
+        
+        // Style the summary stats with proper colors
+        const summaryItems = summarySlot.querySelectorAll('div');
+        summaryItems.forEach((item, index) => {
+          const spans = item.querySelectorAll('span');
+          if (spans.length >= 2) {
+            // First span is the label
+            (spans[0] as HTMLElement).style.cssText = `
+              color: #9ca3af;
+              font-size: 12px;
+            `;
+            // Second span is the value
+            const valueSpan = spans[1] as HTMLElement;
+            valueSpan.style.cssText = `
+              font-weight: 600;
+              font-size: 12px;
+            `;
+            
+            // Apply colors based on type
+            if (index === 0) { // Income
+              valueSpan.style.color = '#10b981';
+            } else if (index === 1) { // Expense  
+              valueSpan.style.color = '#ef4444';
+            } else if (index === 2) { // Net
+              const text = valueSpan.textContent || '';
+              const isNegative = text.includes('-');
+              valueSpan.style.color = isNegative ? '#ef4444' : '#10b981';
+            }
+          }
+        });
       }
     }
 
