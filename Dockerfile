@@ -1,5 +1,5 @@
 # Backend Dockerfile for Philand Rust API
-FROM rust:1.75-slim as builder
+FROM rust:1.75-slim AS builder
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
