@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ../../base
 
-namespace: philand-dev
+namespace: philand
 
 commonLabels:
   env: dev
