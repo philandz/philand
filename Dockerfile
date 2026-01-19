@@ -1,65 +1,47 @@
-# Backend Dockerfile for Philand Rust API
-FROM rust:1.91-slim AS builder
+FROM rust:1.91-bookworm AS builder
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     pkg-config \
     libssl-dev \
     libmariadb-dev \
     ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
 WORKDIR /app
 
-# Copy Cargo files for dependency caching
 COPY Cargo.toml Cargo.lock ./
 
-# Create a dummy main.rs to build dependencies
-RUN mkdir src && echo "fn main() {}" > src/main.rs
-
-# Build dependencies (this layer will be cached)
+RUN mkdir -p src && printf "fn main() {}\n" > src/main.rs
 RUN cargo build --release && rm -rf src
 
-# Copy source code
 COPY src ./src
 COPY migrations ./migrations
 
-# Build the application
 RUN cargo build --release
 
-# Runtime stage
 FROM debian:bookworm-slim
 
-# Install runtime dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     libssl3 \
     libmariadb3 \
-    && rm -rf /var/lib/apt/lists/*
+    curl \
+  && rm -rf /var/lib/apt/lists/*
 
-# Create app user
-RUN useradd -r -s /bin/false philand
+RUN useradd -r -s /usr/sbin/nologin -U philand
 
-# Set working directory
 WORKDIR /app
 
-# Copy binary from builder stage
 COPY --from=builder /app/target/release/philand /app/philand
 COPY --from=builder /app/migrations /app/migrations
 
-# Change ownership
 RUN chown -R philand:philand /app
 
-# Switch to app user
 USER philand
 
-# Expose port
 EXPOSE 8080
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8080/healthz || exit 1
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
+  CMD curl -fsS http://127.0.0.1:8080/healthz || exit 1
 
-# Run the application
-CMD ["./philand"]
+CMD ["/app/philand"]
