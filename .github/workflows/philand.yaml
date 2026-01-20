@@ -4,11 +4,16 @@ on:
   push:
     branches: [ "main","sandbox" ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
 
       - name: Meta
         id: meta
