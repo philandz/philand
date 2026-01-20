@@ -8,3 +8,11 @@ namespace: philand
 
 commonLabels:
   env: dev
+
+images:
+  - name: harbor.philand.io.vn/philand/api
+    newName: harbor.philand.io.vn/philand/api
+    newTag: "latest"
+  - name: harbor.philand.io.vn/philand/web
+    newName: harbor.philand.io.vn/philand/web
+    newTag: "latest"
