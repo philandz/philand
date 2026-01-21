@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - ../../base
+  - philand-api-secret-sealed.yaml
 
 namespace: philand
 
