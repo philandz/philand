@@ -38,7 +38,7 @@ jobs:
 
       - name: Update kustomize tag
         run: |
-          TAG=${GITHUB_SHA}
+          TAG=${GITHUB_SHA::7}
           sed -i "s/newTag: \".*\"/newTag: \"${TAG}\"/g" deploy/overlays/dev/kustomization.yaml
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
