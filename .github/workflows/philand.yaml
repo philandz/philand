@@ -33,7 +33,12 @@ jobs:
       - name: Build & Push WEB
         run: |
           IMG="${{ secrets.HARBOR_HOST }}/philand/web:${{ steps.meta.outputs.TAG }}"
-          docker build -t "$IMG" -f web/Dockerfile web
+          docker build -t "$IMG" \
+            --build-arg NEXT_PUBLIC_GOOGLE_CLIENT_ID="${{ secrets.NEXT_PUBLIC_GOOGLE_CLIENT_ID }}" \
+            --build-arg NEXT_PUBLIC_API_URL="${{ vars.NEXT_PUBLIC_API_URL }}" \
+            --build-arg NEXT_PUBLIC_APP_NAME="Philand" \
+            --build-arg NEXT_PUBLIC_APP_VERSION="${{ github.sha }}" \
+            -f web/Dockerfile web
           docker push "$IMG"
 
       - name: Update kustomize tag
