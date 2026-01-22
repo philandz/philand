@@ -17,6 +17,9 @@ spec:
       containers:
       - name: api
         image: harbor.philand.io.vn/philand/api
+        envFrom:
+          - secretRef:
+              name: philand-api-secret
         ports:
         - containerPort: 8080
         resources:
