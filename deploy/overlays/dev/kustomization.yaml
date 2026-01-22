@@ -14,7 +14,7 @@ commonLabels:
 images:
   - name: harbor.philand.io.vn/philand/api
     newName: harbor.philand.io.vn/philand/api
-    newTag: "25bd18f"
+    newTag: "b1d4e92"
   - name: harbor.philand.io.vn/philand/web
     newName: harbor.philand.io.vn/philand/web
-    newTag: "25bd18f"
+    newTag: "b1d4e92"
