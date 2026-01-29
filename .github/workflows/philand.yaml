@@ -2,7 +2,7 @@ name: philand-ci
 
 on:
   push:
-    branches: [ "main","sandbox" ]
+    branches: [ "main" ]
 
 permissions:
   contents: write
