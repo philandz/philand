@@ -2,6 +2,9 @@
 
 Modern budget tracking and financial management platform built with **Rust** + **Next.js**.
 
+> Migration note: this repository is the legacy/monolith application (v1) used during strangler-pattern extraction.
+> New microservices are developed in sibling repositories (`identity`, `gateway`, `protobuf`, `libs`, `infra`).
+
 <div align="center">
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
