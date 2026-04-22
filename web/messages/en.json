@@ -216,7 +216,6 @@
     "member": "Member",
     "allMembers": "All Members",
     "filterByMember": "Filter by Member",
-    "createdBy": "Created by",
     "exportAsImage": "Export as Image",
     "exporting": "Exporting...",
     "exportSuccess": "Exported successfully",
@@ -539,5 +538,75 @@
     "debt": "Debt",
     "investment": "Investment",
     "sharing": "Sharing"
+  },
+  "admin": {
+    "console": {
+      "badge": "Super Admin Console",
+      "title": "Admin Console",
+      "role": "Super Admin",
+      "loggedInAs": "Logged in as {name} ({email})",
+      "tabUsers": "Users",
+      "tabOrgs": "Organizations",
+      "kpiUsers": "Total Users",
+      "kpiOrgs": "Total Organizations",
+      "kpiAdmins": "Super Admins"
+    },
+    "common": {
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "deleting": "Deleting..."
+    },
+    "users": {
+      "searchPlaceholder": "Search by name or email...",
+      "create": "New User",
+      "createTitle": "Create User",
+      "creating": "Creating...",
+      "edit": "Edit",
+      "editTitle": "Edit User",
+      "save": "Save Changes",
+      "saving": "Saving...",
+      "delete": "Delete",
+      "deleteTitle": "Delete User",
+      "deleteDescription": "This will permanently remove the user and cannot be undone.",
+      "cancel": "Cancel",
+      "email": "Email",
+      "displayName": "Display Name",
+      "password": "Password",
+      "passwordHint": "Minimum 8 characters",
+      "userType": "User Type",
+      "typeNormal": "Normal",
+      "typeSuperAdmin": "Super Admin",
+      "status": "Status",
+      "statusActive": "Active",
+      "statusDisabled": "Disabled",
+      "empty": "No users found.",
+      "results": "{count, plural, =0 {No users} =1 {1 user} other {# users}}"
+    },
+    "orgs": {
+      "searchPlaceholder": "Search by organization name...",
+      "create": "New Organization",
+      "createTitle": "Create Organization",
+      "creating": "Creating...",
+      "edit": "Edit",
+      "editTitle": "Edit Organization",
+      "save": "Save Changes",
+      "saving": "Saving...",
+      "delete": "Delete",
+      "deleteTitle": "Delete Organization",
+      "deleteDescription": "This will permanently remove the organization and cannot be undone.",
+      "cancel": "Cancel",
+      "name": "Organization Name",
+      "owner": "Owner",
+      "ownerLabel": "Owner",
+      "ownerPlaceholder": "Select an owner...",
+      "status": "Status",
+      "statusActive": "Active",
+      "statusDisabled": "Disabled",
+      "empty": "No organizations found.",
+      "results": "{count, plural, =0 {No organizations} =1 {1 organization} other {# organizations}}"
+    },
+    "states": {
+      "loading": "Loading admin console..."
+    }
   }
 }
