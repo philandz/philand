@@ -472,7 +472,7 @@ export default function BudgetEntriesPage() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle>{t('entry.transactions')}</CardTitle>
-            <div className="flex gap-4 text-sm">
+            <div className="flex gap-4 text-sm" data-export-summary>
               <div>
                 <span className="text-muted-foreground">{t('entry.income')}: </span>
                 <span className="font-semibold text-emerald-600">

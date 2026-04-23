@@ -25,8 +25,17 @@ fn decoding_key() -> DecodingKey {
     DecodingKey::from_secret(secret.as_bytes())
 }
 
-#[derive(Deserialize)] pub struct LoginReq { pub email: String, pub password: String }
-#[derive(Serialize)] pub struct LoginResp { pub token: String, pub user: User }
+#[derive(Deserialize)] 
+pub struct LoginReq { 
+    pub email: String, 
+    pub password: String 
+}
+
+#[derive(Serialize)] 
+pub struct LoginResp { 
+    pub token: String, 
+    pub user: User 
+}
 
 pub async fn signup(State(state): State<Arc<AppState>>, Json(req): Json<CreateUserReq>) -> Result<Json<User>, AppError> {
     let cost = get_config().get_jwt_config().get_bcrypt_cost();

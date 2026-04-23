@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+  - philand-api-secret-sealed.yaml
+  - philand-web-secret-sealed.yaml
+
+namespace: philand
+
+commonLabels:
+  env: dev
+
+images:
+  - name: harbor.philand.io.vn/philand/api
+    newName: harbor.philand.io.vn/philand/api
+    newTag: "c26ce12"
+  - name: harbor.philand.io.vn/philand/web
+    newName: harbor.philand.io.vn/philand/web
+    newTag: "c26ce12"
