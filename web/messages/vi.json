@@ -538,5 +538,75 @@
     "debt": "Nợ",
     "investment": "Đầu tư",
     "sharing": "Chia sẻ"
+  },
+  "admin": {
+    "console": {
+      "badge": "Bảng Điều Khiển Quản Trị",
+      "title": "Bảng Điều Khiển",
+      "role": "Quản Trị Viên",
+      "loggedInAs": "Đăng nhập với {name} ({email})",
+      "tabUsers": "Người Dùng",
+      "tabOrgs": "Tổ Chức",
+      "kpiUsers": "Tổng Người Dùng",
+      "kpiOrgs": "Tổng Tổ Chức",
+      "kpiAdmins": "Quản Trị Viên"
+    },
+    "common": {
+      "cancel": "Hủy",
+      "delete": "Xóa",
+      "deleting": "Đang xóa..."
+    },
+    "users": {
+      "searchPlaceholder": "Tìm theo tên hoặc email...",
+      "create": "Tạo Người Dùng",
+      "createTitle": "Tạo Người Dùng Mới",
+      "creating": "Đang tạo...",
+      "edit": "Chỉnh Sửa",
+      "editTitle": "Chỉnh Sửa Người Dùng",
+      "save": "Lưu Thay Đổi",
+      "saving": "Đang lưu...",
+      "delete": "Xóa",
+      "deleteTitle": "Xóa Người Dùng",
+      "deleteDescription": "Hành động này không thể hoàn tác. Người dùng sẽ bị xóa vĩnh viễn.",
+      "cancel": "Hủy",
+      "email": "Email",
+      "displayName": "Tên Hiển Thị",
+      "password": "Mật Khẩu",
+      "passwordHint": "Tối thiểu 8 ký tự",
+      "userType": "Loại Tài Khoản",
+      "typeNormal": "Thông Thường",
+      "typeSuperAdmin": "Quản Trị Viên",
+      "status": "Trạng Thái",
+      "statusActive": "Hoạt Động",
+      "statusDisabled": "Vô Hiệu",
+      "empty": "Không tìm thấy người dùng.",
+      "results": "{count, plural, =0 {Không có người dùng} =1 {1 người dùng} other {# người dùng}}"
+    },
+    "orgs": {
+      "searchPlaceholder": "Tìm theo tên tổ chức...",
+      "create": "Tạo Tổ Chức",
+      "createTitle": "Tạo Tổ Chức Mới",
+      "creating": "Đang tạo...",
+      "edit": "Chỉnh Sửa",
+      "editTitle": "Chỉnh Sửa Tổ Chức",
+      "save": "Lưu Thay Đổi",
+      "saving": "Đang lưu...",
+      "delete": "Xóa",
+      "deleteTitle": "Xóa Tổ Chức",
+      "deleteDescription": "Hành động này không thể hoàn tác. Tổ chức sẽ bị xóa vĩnh viễn.",
+      "cancel": "Hủy",
+      "name": "Tên Tổ Chức",
+      "owner": "Chủ Sở Hữu",
+      "ownerLabel": "Chủ Sở Hữu",
+      "ownerPlaceholder": "Chọn chủ sở hữu...",
+      "status": "Trạng Thái",
+      "statusActive": "Hoạt Động",
+      "statusDisabled": "Vô Hiệu",
+      "empty": "Không tìm thấy tổ chức.",
+      "results": "{count, plural, =0 {Không có tổ chức} =1 {1 tổ chức} other {# tổ chức}}"
+    },
+    "states": {
+      "loading": "Đang tải bảng điều khiển..."
+    }
   }
 }
