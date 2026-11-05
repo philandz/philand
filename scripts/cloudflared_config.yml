@@ -1,0 +1,21 @@
+tunnel: philand-01
+credentials-file: /root/.cloudflared/6e270b76-9a45-42e3-b9b8-fe33734e21f9.json
+
+ingress:
+  - hostname: www.philand.io.vn
+    service: http://127.0.0.1:30958
+  - hostname: api.philand.io.vn
+    service: http://127.0.0.1:30958
+  - hostname: v2.philand.io.vn
+    service: http://127.0.0.1:30958
+  - hostname: harbor.philand.io.vn
+    service: http://localhost:30002
+  - hostname: argocd.philand.io.vn
+    service: http://localhost:30080
+  - hostname: s3.philand.io.vn
+    service: http://127.0.0.1:3900
+  - hostname: ssh-01.philand.io.vn
+    service: ssh://localhost:22
+  - hostname: play.philand.io.vn
+    service: http://127.0.0.1:30958     # cung upstream Traefik nhu v2.philand.io.vn
+  - service: http_status:404
